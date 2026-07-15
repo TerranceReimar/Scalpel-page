@@ -1,0 +1,19 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B1620"/>
+      <stop offset="100%" stop-color="#132531"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="64" height="64" rx="14" fill="url(#bg)"/>
+
+  <!-- Scalpel: bold single-stroke silhouette, handle + angled blade -->
+  <path d="M13 51 L28 36 L38 26 L48 16 L52 20 L42 30 L32 40 L17 55 Z"
+        fill="#4FD1C5"/>
+
+  <!-- Handle segment recolored steel blue for contrast -->
+  <path d="M13 51 L28 36 L32 40 L17 55 Z"
+        fill="#7FA8BD"/>
+</svg>
