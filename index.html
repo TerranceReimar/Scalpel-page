@@ -1,0 +1,697 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>
+      Scalpel — Medical Aid Claims Management for South African Dental Practices
+    </title>
+    <meta
+      name="description"
+      content="Scalpel is a desktop practice management platform built for South African dental practices. Manage patients, invoices, medical aid claims with Discovery, Medimed, Bonitas and more — with full offline capability."
+    />
+    <meta
+      name="keywords"
+      content="medical aid claims software, dental practice management South Africa, dental billing software, Discovery Medimed Bonitas claims, HPCSA dental software, dental invoicing South Africa"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Scalpel" />
+    <link rel="canonical" href="https://scalpel.solutions" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://scalpel.solutions" />
+    <meta
+      property="og:title"
+      content="Scalpel — Medical Aid Claims Management for South African Dental Practices"
+    />
+    <meta
+      property="og:description"
+      content="Scalpel cuts through the admin. A desktop app built for South African dental practices to manage patients, invoicing, and medical aid claims — offline-first."
+    />
+
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:title"
+      content="Scalpel — Medical Aid Claims Management"
+    />
+    <meta
+      name="twitter:description"
+      content="Practice management software built for South African dental practices. Coming soon."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --blue: #2563eb;
+        --blue-dark: #1d4ed8;
+        --navy: #0f172a;
+        --slate: #475569;
+        --muted: #94a3b8;
+        --border: #e2e6ec;
+        --surface: #fafbfc;
+        --white: #ffffff;
+        --green: #4ade80;
+        --amber: #d97706;
+        --mono: "DM Mono", "Courier New", monospace;
+        --sans: "DM Sans", system-ui, sans-serif;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: var(--sans);
+        background: var(--surface);
+        color: var(--navy);
+        min-height: 100vh;
+        -webkit-font-smoothing: antialiased;
+      }
+
+      .top-rule {
+        height: 3px;
+        background: var(--blue);
+      }
+
+      /* NAV */
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 48px;
+        border-bottom: 0.5px solid var(--border);
+        background: var(--surface);
+      }
+
+      .wordmark {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-decoration: none;
+      }
+
+      .wordmark-text {
+        font-size: 19px;
+        font-weight: 500;
+        letter-spacing: -0.035em;
+        color: var(--navy);
+      }
+
+      .wordmark-text span {
+        color: var(--blue);
+      }
+
+      .monitor-tag {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: var(--navy);
+        border-radius: 4px;
+        padding: 6px 14px;
+      }
+
+      .monitor-label {
+        font-family: var(--mono);
+        font-size: 10px;
+        letter-spacing: 0.13em;
+        color: var(--green);
+        text-transform: uppercase;
+      }
+
+      /* HERO */
+      .hero {
+        padding: 72px 48px 56px;
+        max-width: 900px;
+      }
+
+      .wristband {
+        display: inline-block;
+        background: var(--white);
+        border: 0.5px solid var(--border);
+        border-left: 3px solid var(--blue);
+        padding: 9px 16px;
+        margin-bottom: 36px;
+        animation: fadeUp 0.6s ease both;
+      }
+
+      .wb-row {
+        display: flex;
+        gap: 28px;
+        flex-wrap: wrap;
+      }
+
+      .wb-field {
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+      }
+
+      .wb-label {
+        font-family: var(--mono);
+        font-size: 9px;
+        letter-spacing: 0.14em;
+        color: var(--muted);
+        text-transform: uppercase;
+      }
+
+      .wb-value {
+        font-family: var(--mono);
+        font-size: 12px;
+        font-weight: 500;
+        color: var(--navy);
+        letter-spacing: 0.04em;
+      }
+
+      .wb-value.blue {
+        color: var(--blue);
+      }
+      .wb-value.amber {
+        color: var(--amber);
+      }
+
+      h1 {
+        font-size: clamp(32px, 5vw, 48px);
+        font-weight: 300;
+        color: var(--navy);
+        line-height: 1.1;
+        letter-spacing: -0.03em;
+        margin-bottom: 20px;
+        animation: fadeUp 0.6s 0.1s ease both;
+      }
+
+      h1 strong {
+        font-weight: 500;
+        color: var(--blue);
+      }
+
+      .hero-sub {
+        font-size: 17px;
+        color: var(--slate);
+        line-height: 1.7;
+        max-width: 520px;
+        margin-bottom: 40px;
+        font-weight: 300;
+        animation: fadeUp 0.6s 0.2s ease both;
+      }
+
+      .capture-wrap {
+        animation: fadeUp 0.6s 0.3s ease both;
+      }
+
+      .capture {
+        display: flex;
+        gap: 8px;
+        max-width: 440px;
+      }
+
+      .capture input {
+        flex: 1;
+        height: 42px;
+        border: 0.5px solid var(--border);
+        border-radius: 4px;
+        padding: 0 16px;
+        font-size: 14px;
+        font-family: var(--sans);
+        color: var(--navy);
+        background: var(--white);
+        outline: none;
+        transition: border-color 0.15s;
+      }
+
+      .capture input:focus {
+        border-color: var(--blue);
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.08);
+      }
+
+      .capture input::placeholder {
+        color: var(--muted);
+      }
+
+      .capture button {
+        height: 42px;
+        background: var(--blue);
+        color: var(--white);
+        border: none;
+        border-radius: 4px;
+        padding: 0 22px;
+        font-size: 13px;
+        font-weight: 500;
+        font-family: var(--sans);
+        cursor: pointer;
+        white-space: nowrap;
+        transition:
+          background 0.15s,
+          transform 0.1s;
+      }
+
+      .capture button:hover {
+        background: var(--blue-dark);
+      }
+      .capture button:active {
+        transform: scale(0.98);
+      }
+
+      .capture-note {
+        font-family: var(--mono);
+        font-size: 10px;
+        color: var(--muted);
+        margin-top: 10px;
+        letter-spacing: 0.04em;
+      }
+
+      .success-msg {
+        display: none;
+        font-family: var(--mono);
+        font-size: 12px;
+        color: var(--green);
+        margin-top: 10px;
+        letter-spacing: 0.06em;
+      }
+
+      /* DIVIDER */
+      .divider {
+        height: 0.5px;
+        background: var(--border);
+        margin: 0 48px;
+      }
+
+      /* ABOUT */
+      .about {
+        padding: 48px 48px;
+      }
+
+      .section-label {
+        font-family: var(--mono);
+        font-size: 10px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 18px;
+      }
+
+      .about-text {
+        font-size: 15px;
+        color: var(--slate);
+        line-height: 1.8;
+        max-width: 580px;
+        font-weight: 300;
+      }
+
+      .about-text strong {
+        color: var(--navy);
+        font-weight: 500;
+      }
+
+      /* FEATURES */
+      .features {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0;
+        border-top: 0.5px solid var(--border);
+        border-bottom: 0.5px solid var(--border);
+      }
+
+      .feature {
+        padding: 28px 48px;
+        border-right: 0.5px solid var(--border);
+      }
+
+      .feature:last-child {
+        border-right: none;
+      }
+
+      .feature-num {
+        font-family: var(--mono);
+        font-size: 10px;
+        color: var(--blue);
+        letter-spacing: 0.1em;
+        margin-bottom: 12px;
+        opacity: 0.7;
+      }
+
+      .feature-title {
+        font-size: 13px;
+        font-weight: 500;
+        color: var(--navy);
+        margin-bottom: 6px;
+      }
+
+      .feature-desc {
+        font-size: 12px;
+        color: var(--muted);
+        line-height: 1.65;
+        font-weight: 300;
+      }
+
+      /* FOOTER */
+      footer {
+        padding: 22px 48px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .footer-left {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+      }
+
+      .footer-domain {
+        font-family: var(--mono);
+        font-size: 11px;
+        color: var(--muted);
+        letter-spacing: 0.04em;
+      }
+
+      .footer-copy {
+        font-family: var(--mono);
+        font-size: 10px;
+        color: var(--border);
+        letter-spacing: 0.04em;
+      }
+
+      /* ANIMATIONS */
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(12px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* RESPONSIVE */
+      @media (max-width: 640px) {
+        nav {
+          padding: 16px 20px;
+        }
+        .monitor-label {
+          display: none;
+        }
+        .hero {
+          padding: 48px 20px 40px;
+        }
+        .divider {
+          margin: 0 20px;
+        }
+        .about {
+          padding: 36px 20px;
+        }
+        .features {
+          grid-template-columns: 1fr;
+        }
+        .feature {
+          border-right: none;
+          border-bottom: 0.5px solid var(--border);
+        }
+        .feature:last-child {
+          border-bottom: none;
+        }
+        .feature {
+          padding: 24px 20px;
+        }
+        footer {
+          padding: 18px 20px;
+        }
+        .capture {
+          flex-direction: column;
+        }
+        .capture button {
+          width: 100%;
+        }
+      }
+    </style>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Scalpel",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Windows, macOS, Linux",
+        "description": "Medical aid claims management desktop application for South African dental practices. Manage patients, invoices, medical aid claims and payment reconciliation with full offline capability.",
+        "url": "https://scalpel.solutions",
+        "offers": {
+          "@type": "Offer",
+          "availability": "https://schema.org/PreOrder"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="top-rule"></div>
+
+    <nav>
+      <a class="wordmark" href="/" aria-label="Scalpel home">
+        <svg
+          width="26"
+          height="26"
+          viewBox="0 0 28 28"
+          fill="none"
+          aria-hidden="true"
+        >
+          <path
+            d="M9 22 L12 8 C12.5 5 15.5 5 16 8 L17 13 C17.3 14.5 18.5 15 20 14.5"
+            stroke="#2563EB"
+            stroke-width="1.75"
+            stroke-linecap="round"
+            fill="none"
+          />
+          <path
+            d="M9 22 L11 21"
+            stroke="#94A3B8"
+            stroke-width="2.5"
+            stroke-linecap="round"
+          />
+          <path
+            d="M11 21 L12.5 20"
+            stroke="#CBD5E1"
+            stroke-width="2"
+            stroke-linecap="round"
+          />
+        </svg>
+        <span class="wordmark-text">scal<span>pel</span></span>
+      </a>
+
+      <div class="monitor-tag" aria-label="Status: Surgery in progress">
+        <canvas id="ecg" width="80" height="24" aria-hidden="true"></canvas>
+        <span class="monitor-label">Surgery in progress</span>
+      </div>
+    </nav>
+
+    <main>
+      <section class="hero">
+        <div class="wristband" role="status" aria-label="Application status">
+          <div class="wb-row">
+            <div class="wb-field">
+              <span class="wb-label">Patient</span>
+              <span class="wb-value blue">scalpel.solutions</span>
+            </div>
+            <div class="wb-field">
+              <span class="wb-label">Status</span>
+              <span class="wb-value amber">Pre-operative</span>
+            </div>
+            <div class="wb-field">
+              <span class="wb-label">Procedure</span>
+              <span class="wb-value">App development</span>
+            </div>
+          </div>
+        </div>
+
+        <h1>
+          Medical aid claims,<br />
+          <strong>precisely managed.</strong>
+        </h1>
+
+        <p class="hero-sub">
+          A desktop practice management platform built for South African dental
+          practices — handling patient records, invoicing, medical aid claims,
+          and payment reconciliation with full offline capability.
+        </p>
+
+        <div class="capture-wrap">
+          <div class="capture">
+            <label
+              for="email"
+              style="
+                position: absolute;
+                width: 1px;
+                height: 1px;
+                overflow: hidden;
+                clip: rect(0, 0, 0, 0);
+              "
+              >Email address</label
+            >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="your@practice.co.za"
+              autocomplete="email"
+            />
+            <button type="button" onclick="handleSubmit()">
+              Notify me at launch
+            </button>
+          </div>
+          <p class="capture-note">
+            No spam &mdash; one email when we open doors.
+          </p>
+          <p class="success-msg" id="success-msg">
+            &#10003;&nbsp; You're on the list. We'll be in touch.
+          </p>
+        </div>
+      </section>
+
+      <div class="divider"></div>
+
+      <section class="about">
+        <p class="section-label">// What is Scalpel?</p>
+        <p class="about-text">
+          South African dental practices lose thousands of rands each year to
+          <strong>rejected medical aid claims</strong>, manual billing errors,
+          and slow reconciliation. Scalpel cuts through the admin — giving your
+          front desk a clean, fast tool to manage
+          <strong>Discovery, Medimed, Bonitas</strong>, and other major schemes
+          from a single desktop app. Built offline-first so it works whether
+          your fibre is up or not.
+        </p>
+      </section>
+
+      <div class="features" aria-label="Key features">
+        <div class="feature">
+          <div class="feature-num">01</div>
+          <div class="feature-title">Claims &amp; invoicing</div>
+          <div class="feature-desc">
+            Full claim lifecycle from invoice creation to payment
+            reconciliation. ICD-10 codes, procedure tariffs, shortfall tracking.
+          </div>
+        </div>
+        <div class="feature">
+          <div class="feature-num">02</div>
+          <div class="feature-title">Offline-first</div>
+          <div class="feature-desc">
+            Works without internet. Syncs automatically across desktops when
+            connected. Never lose data to a dropped connection.
+          </div>
+        </div>
+        <div class="feature">
+          <div class="feature-num">03</div>
+          <div class="feature-title">SA-built</div>
+          <div class="feature-desc">
+            Designed for HPCSA compliance and local scheme formats. Understands
+            dependent codes, membership numbers, and SA ID validation.
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-left">
+        <span class="footer-domain">scalpel.solutions</span>
+      </div>
+      <span class="footer-copy">&copy; 2026 Scalpel</span>
+    </footer>
+
+    <script>
+      // ECG animation
+      (function () {
+        const canvas = document.getElementById("ecg");
+        if (!canvas) return;
+        const ctx = canvas.getContext("2d");
+        const W = canvas.width,
+          H = canvas.height;
+        const pts = [
+          [0, 12],
+          [10, 12],
+          [14, 12],
+          [17, 3],
+          [19, 22],
+          [21, 12],
+          [26, 12],
+          [80, 12],
+        ];
+        let offset = 0;
+
+        function getY(x) {
+          for (let i = 0; i < pts.length - 1; i++) {
+            const x0 = pts[i][0],
+              y0 = pts[i][1];
+            const x1 = pts[i + 1][0],
+              y1 = pts[i + 1][1];
+            if (x >= x0 && x <= x1) {
+              return y0 + ((x - x0) / (x1 - x0)) * (y1 - y0);
+            }
+          }
+          return 12;
+        }
+
+        function draw() {
+          ctx.clearRect(0, 0, W, H);
+          ctx.lineWidth = 1.5;
+          ctx.lineJoin = "round";
+          ctx.lineCap = "round";
+          ctx.beginPath();
+          for (let x = 0; x < W; x++) {
+            const srcX = (x + offset) % 80;
+            const y = getY(srcX);
+            ctx.globalAlpha = 0.15 + 0.85 * (x / W);
+            ctx.strokeStyle = "#4ADE80";
+            if (x === 0) ctx.moveTo(x, y);
+            else ctx.lineTo(x, y);
+          }
+          ctx.stroke();
+          ctx.globalAlpha = 1;
+          offset = (offset + 0.4) % 80;
+          requestAnimationFrame(draw);
+        }
+        draw();
+      })();
+
+      // Email capture
+      function handleSubmit() {
+        const input = document.getElementById("email");
+        const val = input.value.trim();
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!re.test(val)) {
+          input.focus();
+          input.style.borderColor = "#EF4444";
+          setTimeout(() => (input.style.borderColor = ""), 1500);
+          return;
+        }
+        input.disabled = true;
+        document.querySelector(".capture button").disabled = true;
+        document.querySelector(".capture button").textContent = "Done";
+        document.querySelector(".capture-note").style.display = "none";
+        document.getElementById("success-msg").style.display = "block";
+        // TODO: wire up to your email backend / Mailchimp / Loops etc.
+        console.log("Email captured:", val);
+      }
+
+      document
+        .getElementById("email")
+        .addEventListener("keydown", function (e) {
+          if (e.key === "Enter") handleSubmit();
+        });
+    </script>
+  </body>
+</html>
